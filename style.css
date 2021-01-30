@@ -1,0 +1,183 @@
+body {
+    margin: 0;
+    background: #0C0C0C;
+}
+
+main {
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+
+p {
+    margin: 0;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    position: absolute;
+    top: 8%;
+    left: 10%;
+    line-height: 34px;
+    max-width: 40vw;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.hexagon {
+    position: relative;
+}
+
+.hexagon-img {
+    position: relative;
+}
+
+.pointer-icon {
+    transform: rotate(-45deg);
+    display: none;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    animation-name: pointer;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.slide {
+    position: absolute;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 27px;
+    overflow-wrap: break-word;
+}
+
+.first-slide {
+    bottom: 100%;
+    left: 50%;
+    margin: 20px 0;
+    width: 50vw;
+}
+
+.second-slide {
+    top: 15%;
+    left: 100%;
+    margin: 0 20px;
+    width: 30vw;
+}
+
+.third-slide {
+    top: 70%;
+    left: 100%;
+    margin: 0 20px;
+    width: 30vw;
+}
+
+.forth-slide,
+.fifth-slide,
+.sixth-slide {
+    text-align: right;
+}
+
+.forth-slide {
+    top: 100%;
+    right: 50%;
+    margin: 20px 0;
+    width: 50vw;
+}
+
+.fifth-slide {
+    right: 100%;
+    top: 65%;
+    margin: 0 20px;
+    width: 30vw;
+}
+
+.sixth-slide {
+    right: 100%;
+    top: 15%;
+    margin: 0 20px;
+    width: 30vw;
+}
+
+@keyframes pointer {
+    0% {
+        transform: rotate(-45deg);
+    }
+    25% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(45deg);
+    }
+    75% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
+@media (max-height: 500px) and (min-width: 780px) {
+    .title {
+        position: static;
+        margin-left: 10%;
+        max-width: 40%;
+    }
+}
+
+@media (max-width: 780px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 28px;
+    }
+
+    .title {
+        font-size: 20px;
+        position: static;
+        line-height: 24.2px;
+        max-width: 90vw;
+        margin-bottom: 44px;
+    }
+
+    .hexagon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .slider {
+        min-height: auto;
+    }
+
+    .pointer-icon {
+        display: block;
+    }
+
+    .slide {
+        display: none;
+        position: static;
+        width: auto;
+        text-align: center;
+        margin: 0 0 20px 0;
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .slide.active {
+        display: block;
+    }
+}
